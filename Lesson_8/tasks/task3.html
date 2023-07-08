@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Задача 4</h1>
+  <p>
+    Дано послідовність номерів автомобілів. Підрахувати к-ть номерів, які :
+    •	починаються на букву «А»;
+    •	перша і остання літери співпадають;
+    •	складаються з більше ніш 5 символів;    
+  </p>
+
+  <script> 
+  const carNumbers = ['СВ0011АС', 'АА2254КО', 'АН1234КР', 'НА5012КН', 'ААР2587']
+
+  let countFirstLetterA = 0
+  let countFirstLastLetter = 0
+  let countOfMoreFive = 0
+
+  // for (let i = 0; i < carNumbers.length; i++) {
+  //   let carNumber = carNumbers[i]
+
+  //   if(carNumber.charAt(0) === 'А')
+  //   countFirstLetterA++
+
+  //   if(carNumber.charAt(0) === carNumber.charAt(carNumber.length - 1))
+  //   countFirstLastLetter++
+
+  //   if(carNumber.length > 5)
+  //   countOfMoreFive++
+  // }
+
+  for (let i = 0; i < carNumbers.length; i++) {
+    let carNumber = carNumbers[i]
+
+    if(carNumber[0] === 'А')
+    countFirstLetterA++
+
+    if(carNumber[0] === carNumber[carNumber.length - 1])
+    countFirstLastLetter++
+
+    if(carNumber.length > 5)
+    countOfMoreFive++
+  }
+
+  document.write(`
+   <h3> З заданих номерів автомобілів - ${carNumbers} : </h3>
+    <ul>
+    <li>	${countFirstLetterA} - починаються на букву «А» </li>
+    <li>	${countFirstLastLetter} - перша і остання літери співпадають </li>
+    <li>	${countOfMoreFive} - складаються з більше ніш 5 символів </li> 
+    </ul>  
+  `)
+
+  </script>
+</body>
+</body>
+</html>

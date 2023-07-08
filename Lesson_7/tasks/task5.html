@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    Створити окремі функції, які переводять:
+  </p>
+  <ol>
+    <li>Сантиметри у дюйми</li>
+    <li>Кілограми у фунти;</li>
+    <li>Кілометри у милі.</li>
+   </ol>   
+  <script>
+    function convertCentimetersToInches(number) {
+      return number / 2.54
+    }
+    
+    function convertKilogramsToPounds(number) {
+      return number * 2.20462
+    }
+
+    function convertKilometersToMiles(number) {
+      return number * 0.621371
+    }
+    
+    const userNumber = parseFloat(prompt('Введіть значення для конвертування'))    
+
+    const inches = convertCentimetersToInches(userNumber)
+    const pounds = convertKilogramsToPounds(userNumber)
+    const miles = convertKilometersToMiles(userNumber)
+
+    document.write(`<h3>Отримані значення:</h3>
+    <ol>
+      <li>${userNumber} см = ${inches.toFixed(2)} дюйми</li>
+      <li>${userNumber} кг = ${pounds.toFixed(2)} фунти</li>
+      <li>${userNumber} км = ${miles.toFixed(2)} милі</li>
+    </ol>
+    `)
+  </script>
+
+</body>
+
+</html>

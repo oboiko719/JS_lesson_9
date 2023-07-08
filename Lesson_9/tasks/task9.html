@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    Дано масив імен. Сформувати масив з перших літер цих імен.
+  </p>
+
+  <script>
+
+    function getFirstLetters(arr) {
+    const newArr = [...arr]
+    let arr1 = []
+
+      for (let item of newArr) {
+      arr1.push(item[0]) 
+      }
+
+    return arr1
+    }
+
+    const names = ['Петро', 'Ема', 'Роман', 'Ельвіра', 'Марія', 'Оля', 'Галина', 'Андрій']
+    const firstLetters = getFirstLetters(names) 
+    document.write(`Масив  [${names}] <br> Новий масив тих, які починаються на «А» ---- ${firstLetters}`)
+  </script>
+</body>
+
+</html>

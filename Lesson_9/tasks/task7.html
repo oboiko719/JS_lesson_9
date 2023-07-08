@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>
+    Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки
+  </p>
+
+  <script>
+
+function applyDiscount(arr, price, discount) {
+      const newArr = [...arr]
+      let arr1 = []
+
+      for (let i=0; i < newArr.length; i++) {
+
+      if(newArr[i] > price)
+      newArr[i] = newArr[i] - (newArr[i] * discount / 100)
+
+      arr1.push(newArr[i])
+     }
+
+     return arr1
+    }
+
+    const arr = [2000, 1500, 900, 850, 3000, 700, 4000, 5000]
+    document.write(`Масив  [${arr}] <br> Ціни товарів, які більші за 1000 грн. з 30% знижкою ---- ${applyDiscount(arr, 1000, 30)}`) 
+  </script>
+</body>
+
+</html>

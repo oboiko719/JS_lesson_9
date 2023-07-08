@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Задача 1</h1>
+  <p>
+    Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься 
+    (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)). 
+  </p>
+
+  <script>
+     //--- ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ МАСИВУ 
+       function inputArray(userLength, prefixMessage) {
+         let arr = []
+
+         for (let i = 0; i < userLength; i++) {
+           let val = parseInt(prompt(`${prefixMessage} ${i + 1} = `))
+           arr.push(val)
+         }
+
+         return arr
+       }
+       //--- ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СЕРЕДНЬОГО ЗНАЧЕННЯ
+       function getAverageGrades(arr) {
+        let sum = 0
+        
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i]          
+        }
+
+        return sum / arr.length
+       }
+       //--- ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ НАЙМЕНШОЇ ОЦІНКИ
+       function getMinValue(arr) {
+        let min = arr[0]
+
+        for (let i = 0; i < arr.length; i++) {
+          if(min > arr[i]) {
+            min = arr[i]
+          }           
+        }
+        return min
+       }
+       
+       // 1) Вводимо кількість предметів
+       let quantity = parseInt(prompt('Введіть кількість предметів для підрахунку середнього балу'))
+      // 2) Вводимо елементи масиву
+       let grades = inputArray(quantity, 'Введіть оцінку з предмету')
+      // 3) Знаходимо розв"язок
+      // 3.1 - середній бал
+       let averageGrade = getAverageGrades(grades)
+      //3.2 Функція для знаходження категорії студента
+
+       function getStudentCategory(scores) {
+        let category
+
+        switch (getMinValue(scores)) {
+          case 2: category = 'двійочник'
+            break;
+          case 3: category = 'трійочник'
+            break;
+          case 5: category = 'відмінник'
+            break;
+          case 4: category = 'хорошист'
+            break;
+          default:
+            throw new Error('Некоректна оцінка')
+          break;
+        }
+        return category
+       }
+       
+       //4)Виводимо розв"язок
+       document.write(`середній бал = ${averageGrade.toFixed()} <br>`)
+       document.write(`Категорія -  ${getStudentCategory(grades)}`)
+   
+  </script>
+</body>
+</html>

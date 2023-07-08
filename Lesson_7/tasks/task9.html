@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 9</h1>
+  <p>
+    Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.
+  </p>
+  <script>
+    function numberOfNegativeTemperatures(temperatures) {
+       let result = 0
+      for (let i = 0; i < temperatures.length; i++) {
+        if (temperatures[i] < 0) 
+        result++        
+      }
+      return result
+    }
+
+    const temperatureInterval = [-20, -15, -10, 5, 25, 15, 1, 0, -3]
+    
+    document.write(`В заданому інтервалі температур ${temperatureInterval} 
+           кількість від’ємних показів температури становить 
+          ${numberOfNegativeTemperatures(temperatureInterval)}`)
+  </script>
+
+</body>
+
+</html>

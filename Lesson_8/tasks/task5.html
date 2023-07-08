@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 2</h1>
+  <p>
+    Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+    •	номери днів, протягом яких кількість відвідувачів була меншою за 20;
+    •	номери днів, коли к-ть відвідувачів була мінімальною;
+    •	номери днів, коли к-ть відвідувачів була мaксимальною;
+    •	загальну к-ть клієнтів у робочі дні та окремо загальну к-ть днів на вихідних.    
+  </p>
+
+  <script>
+    const countVisitors = [15, 18, 18, 35, 23, 52, 43]
+
+    let daysBelow20Visitors = []
+    let daysWithMinVisitors = []
+    let daysWithMaxVisitors = [] 
+    let workingDaysVisitors = 0
+    let weekendDaysVisitors = 0
+    let totalCountVisitors = 0
+
+    for (let i = 0; i < countVisitors.length; i++) {
+      let element = countVisitors[i]
+
+      if(element < 20)
+      daysBelow20Visitors.push(i + 1)
+
+      if(element === Math.min(...countVisitors))
+      daysWithMinVisitors.push(i + 1)
+
+      if(element === Math.max(...countVisitors))
+      daysWithMaxVisitors.push(i + 1)
+
+      if (i === 5 || i === 6) { // Перевірка, чи день є вихідним (5 - субота, 6 - неділя)
+        weekendDaysVisitors += countVisitors[i];
+      } else {
+        workingDaysVisitors += countVisitors[i];
+      }
+
+      totalCountVisitors += countVisitors[i]
+    }
+    
+    document.write(`
+   <h3> Kількість відвідувачів магазину по днях протягом тижня - ${countVisitors} : </h3>
+    <ul>
+    <li>	${daysBelow20Visitors} - номери днів, протягом яких кількість відвідувачів була меншою за 20; </li>
+    <li>	${daysWithMinVisitors} - номери днів, коли к-ть відвідувачів була мінімальною; </li>
+    <li>	${daysWithMaxVisitors} - номери днів, коли к-ть відвідувачів була мaксимальною </li> 
+    <li>	${workingDaysVisitors} - к-ть клієнтів у робочі дні </li> 
+    <li>	${weekendDaysVisitors} - к-ть клієнтів на вихідних </li> 
+    <li>	${totalCountVisitors} - загальнa к-ть клієнтів за тиждень</li>
+    </ul>  
+  `)
+
+  </script>
+</body>
+
+</html>

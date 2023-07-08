@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    Інвестор вклав N тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він одержить (без оподаткування).
+  </p>  
+  <script>
+  const startAmount = parseFloat(prompt('Сума внеску'))
+  const tax = 0.2
+  const term = 20
+  let totalAmount = startAmount
+  
+  for (let i = 1; i <= term; i++) {
+     totalAmount = totalAmount + (totalAmount * tax)
+  }
+
+  document.write(`<h3>Сума вкладу за 20 років під 20% річних складе = ${totalAmount.toFixed(2)} грн</h3>`)
+  </script>
+  
+</body>
+</html>

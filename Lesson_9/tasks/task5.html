@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 5</h1>
+  <p>
+    Дано масив елементів. Знайти добуток додатних елементів
+  </p>
+
+  <script>
+
+    function getEvenProduct(arr) {
+      let arr1 = 1
+
+      for (let item of arr) {
+      if(item > 0)
+      arr1*=item
+     }
+
+     return arr1
+    }
+
+    const arr = [50, -20, 2, 10, -6, 3, -20, 5]
+    document.write(`Масив  [${arr}] <br> Добуток парних ---- ${getEvenProduct(arr)}`) 
+  </script>
+</body>
+
+</html>

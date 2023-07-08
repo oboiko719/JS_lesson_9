@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Задача 1</h1>
+  <p>
+    З клавіатури вводитяться числа поки не буде введено 0. Знайти добуток чисел.
+  </p>  
+  <script>
+  let prod = 1
+  let userNum
+
+  while (true) {
+    userNum = parseInt(prompt('Ведіть число'))
+
+    if(userNum ===0) {
+      break
+    }
+
+    prod *= userNum 
+  }
+
+  document.write(prod)
+  </script>  
+</body>
+</html>

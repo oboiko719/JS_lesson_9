@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Задача 7</h1>
+  <p>
+    Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+1)	за весь рік;
+2)	у першій половині року;
+3)	у другій половині року;
+4)	за літо;
+5)	за ІІ квартал;
+6)	за парні місяці (з парними номерами);
+7)	за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+
+  </p>
+  <script>
+     //--- ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ МАСИВУ 
+      function inputArray(userLength, prefixMessage) {
+         let arr = []
+
+         for (let i = 0; i < userLength; i++) {
+           let val = parseInt(prompt(`${prefixMessage} ${i + 1} = `))
+
+           arr.push(val)
+         }         
+
+         return arr
+       }
+       //Вводимо елементи масиву
+       const payments = inputArray(12, 'Введіть суму за місяць ')
+       document.write(payments)
+       document.write(`<br>`)
+
+        //--- ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМАРНОЇ КІЛЬКОСТІ ГРОШЕЙ ЗА ПЕРІОД
+        function getTotalMoney(startMonth, endMonth) {
+          let totalMoney = 0
+
+          for (let i = startMonth - 1; i < endMonth; i++) {
+            totalMoney += payments[i]
+            console.log(payments[i]);
+          }
+          return totalMoney
+        }
+
+        //--- ФУНКЦІЯ ДЛЯ ЗНАХОДЖЕННЯ СУМАРНОЇ КІЛЬКОСТІ ГРОШЕЙ ЗА вказані МІСЯЦІ
+        function getTotalMoneyOfStep(startMonth, endMonth, step) {
+          let totalMoney = 0
+
+          for (let i = startMonth; i < endMonth; i = i + step) {
+            totalMoney += payments[i]
+            console.log(payments[i]);
+          }
+
+          return totalMoney
+        }        
+
+      //Знаходимо результат
+      // 1) за рік (1-12)
+       let sumYear = getTotalMoney(1, 12)       
+      document.write(`за рік = ${sumYear} <br>`)
+
+      // 2) сумарну кількість грошей у першій половині року (1-6)
+      let sum_1_6 = getTotalMoney(1, 6)
+      document.write(`за 1 половину року = ${sum_1_6}<br>`)
+
+      // 3) сумарну кількість грошей за 2-гу половину року (7-12)
+      let sum_7_12 = getTotalMoney(7, 12)
+      document.write(`за 2 половину року = ${sum_7_12}<br>`)
+
+      // 4) сумарну кількість грошей за літо (6-8)
+      let sum_6_8 = getTotalMoney(6, 8)
+      document.write(`за літо = ${sum_6_8}<br>`)
+
+      // 5) сумарну кількість грошей за 2-гий квартал (4-6)
+      let sum_4_6 = getTotalMoney(4, 6)
+      document.write(`за 2-й квартал = ${sum_4_6}<br>`)
+
+      // 6) сумарну кількість грошей за парні місяці (2-12, 2)
+      let sumEvenMonth = getTotalMoneyOfStep(2, 12, 2)
+      document.write(`за парні місяці= ${sumEvenMonth}<br>`)
+
+      // 7) сумарну кількість грошей за місяці початкові у сезоні(3-12, 3)
+      let sumFirstMonth = getTotalMoneyOfStep(3, 12, 3)
+      document.write(`за місяці, які є початковими у сезоні (весна, літо, осінь, зима)= ${sumFirstMonth}`)
+  </script>
+
+</body>
+
+</html>

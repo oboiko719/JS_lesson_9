@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Задача 6</h1>
+  <p>
+    З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+  </p>
+
+  <script>
+    //1.Вводимо необхідні дані
+    let quantityProduct1 = parseInt(prompt('Введіть кількість шоколадок,шт', '1'))
+    let priceProduct1 = parseFloat(prompt('Введіть вартість однієї шоколадки,грн', '1'))
+    let quantityProduct2 = parseInt(prompt('Введіть кількість лимонаду,шт', '1'))
+    let priceProduct2 = parseFloat(prompt('Введіть вартість однієї банки лимонаду,грн', '1'))
+    let quantityProduct3 = parseInt(prompt('Введіть кількість морозива,шт', '1'))
+    let priceProduct3 = parseFloat(prompt('Введіть вартість однієї пачки морозива,грн', '1'))
+    
+    //2. Знаходимо результат
+    let coustProduct1 = quantityProduct1 * priceProduct1
+    let coustProduct2 = quantityProduct2 * priceProduct2
+    let coustProduct3 = quantityProduct3 * priceProduct3
+    let totalCoust = coustProduct1 + coustProduct2 + coustProduct3
+    
+    //3. Виводимо результат
+
+    document.write(`
+    <h3>Магазин"СОНЕЧКО"</h3>
+    <h4>фіскальний чек </h4>
+      <table>
+        <tr>
+          <td>Шоколад <br> ${quantityProduct1}*${priceProduct1}грн</td>
+          <td>${coustProduct1}грн</td>
+        </tr>
+        <tr>
+          <td>Лимонад <br> ${quantityProduct2}*${priceProduct2}грн</td>
+          <td>${coustProduct2}грн</td>
+        </tr>
+        <tr>
+          <td>Морозиво <br> ${quantityProduct3}*${priceProduct3}грн</td>
+          <td>${coustProduct1}грн</td>
+        </tr>
+        <tr>
+          <th>СУМА</th>
+          <th>${totalCoust}грн</th>
+        </tr>        
+      </table>
+      <h4>***ВСЕ БУДЕ УКРАЇНА***</h4>
+    `)   
+  </script>
+</body>
+</html>
